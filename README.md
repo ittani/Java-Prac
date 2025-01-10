@@ -8,3 +8,12 @@ welcome to my mini revision on java Enterprise Edition. Feel free to clone my re
 - Rest API
 - Docker
 - Spring Security
+- Hibernate
+
+### Database 
+- mysql
+- postgresql
+
+### cloud computing
+- aws
+- azure
