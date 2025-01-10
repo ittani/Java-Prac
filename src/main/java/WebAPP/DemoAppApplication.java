@@ -13,6 +13,8 @@ public class DemoAppApplication {
 		//System.out.println(context.getBean("salary"));
 		System.out.println(context.getBean("person"));
 		System.out.println(context.getBean("address"));
+		System.out.println(context.getBean("occupation"));
+		System.out.println(context.getBean("vacation"));
 	}
 
 }
