@@ -26,6 +26,11 @@ public class JDBCRepo {
     VALUES (?, ?, ?);
     """;
 
+    private static final String INSERT_COURSE_QUERY = """
+    INSERT INTO course(id, name)
+    VALUES (?, ?);
+    """;
+
     public void insert() {
         List<Object[]> studentData = List.of(
                 new Object[]{1, "ittani-maemo", "23719311", "Polokwane"},
@@ -44,12 +49,23 @@ public class JDBCRepo {
                 new Object[]{5, "Karabo", "Andile005"}
         );
 
+        List<Object[]> courseData = List.of(
+                new Object[]{1, "Computer Science"},
+                new Object[]{2, "Chemistry"},
+                new Object[]{3, "Physical Sciences"},
+                new Object[]{4, "Mechatronics"},
+                new Object[]{5, "Electronics"}
+        );
+
         try {
             // Batch update for students
             springTemplate.batchUpdate(INSERT_STUDENT_QUERY, studentData);
 
             // Single insert for employee
             springTemplate.batchUpdate(INSERT_EMPLOYEE_QUERY, employeeData);
+
+            // single insert for course
+            springTemplate.batchUpdate(INSERT_COURSE_QUERY,courseData);
 
             System.out.println("Data inserted successfully.");
         } catch (DataAccessException e) {
