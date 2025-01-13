@@ -1,6 +1,6 @@
-# Revision for Java EE
+# Java EE
 
-welcome to my mini revision on java Enterprise Edition. Feel free to clone my repo.
+welcome to my mini revision on java Enterprise Edition.
 ## contents of the study
 - Spring Annotations
 - Dependency Injection
@@ -17,3 +17,7 @@ welcome to my mini revision on java Enterprise Edition. Feel free to clone my re
 ### cloud computing
 - aws
 - azure
+
+### Run the Application
+- click the following http://localhost:8080/h2-console/  to access the H2 Database
+
