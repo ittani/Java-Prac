@@ -2,6 +2,7 @@ package WebAPP.JPApp.Customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,15 @@ public class CustomerJdbcRepo {
     private static String INSERT_CUSTOMER_QUERY = """
         insert into customer(name, expenses, balance)
         values (?, ?, ?);
+        """;
+
+    private static String DELETE_CUSTOMER_QUERY = """
+            delete from customer 
+            where id = ?;
+            """;
+private static String SELECT_QUERY= """
+        select * from customer
+        where id = ?;
         """;
 
     public void insert()
@@ -33,10 +43,24 @@ public class CustomerJdbcRepo {
             // single insert for course
             springJdbcTemplate.batchUpdate(INSERT_CUSTOMER_QUERY,CustomerData);
 
-            System.out.println("Data inserted successfully.");
+            System.out.println("Customer Data inserted successfully.");
         } catch (DataAccessException e) {
             System.err.println("Error inserting data: " + e.getMessage());
         }
     }
+    public void deleteByID(long id)
+    {
+        try {
+            // single insert for course
+            springJdbcTemplate.update(DELETE_CUSTOMER_QUERY, id);
+
+            System.out.println("Customer date deleted");
+        } catch (DataAccessException e) {
+            System.err.println("Error inserting data: " + e.getMessage());
+        }
+    }
+
+
+
     }
 

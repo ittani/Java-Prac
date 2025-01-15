@@ -17,7 +17,14 @@ public class JDBCCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception{
+        //Insert Employee,Student, and Course Data inserted successfully.
         repository.insert();
+
+        //Customer Data inserted successfully.
         customerJdbcRepo.insert();
+
+        //Customer date deleted
+        customerJdbcRepo.deleteByID(1);
+
     }
 }
