@@ -67,7 +67,7 @@ public class JDBCRepo {
             // single insert for course
             springTemplate.batchUpdate(INSERT_COURSE_QUERY,courseData);
 
-            System.out.println("Data inserted successfully.");
+            System.out.println("Employee,Student, and Course Data inserted successfully.");
         } catch (DataAccessException e) {
             System.err.println("Error inserting data: " + e.getMessage());
         }
